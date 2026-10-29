@@ -1,0 +1,383 @@
+{
+  "runs": {
+    "baseline": {
+      "server_args": [
+        "-m",
+        "models/Qwen3-8B-Q8_0.gguf",
+        "-ngl",
+        "all",
+        "-fa",
+        "on",
+        "-c",
+        "8192",
+        "-np",
+        "1",
+        "--port",
+        "9931",
+        "--jinja",
+        "--chat-template-kwargs",
+        "{\"enable_thinking\": false}"
+      ],
+      "completed_samples": 8,
+      "failed_samples": 0,
+      "bench_seconds": 46.1,
+      "summary": [
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 6.636925103000976,
+          "avg_pred_t_s": 39.496141886358856,
+          "avg_prompt_t_s": 907.5274810301214,
+          "category": "coding",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 6.4831314380026015,
+          "avg_pred_t_s": 39.64626290753761,
+          "avg_prompt_t_s": 267.15637689403377,
+          "category": "math",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 1.8462295645040285,
+          "avg_pred_t_s": 39.635717046977334,
+          "avg_prompt_t_s": 451.20870328216927,
+          "category": "qa",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 5.486244123498182,
+          "avg_pred_t_s": 39.05703817645175,
+          "avg_prompt_t_s": 989.1565023648411,
+          "category": "writing",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 5.113132557251447,
+          "avg_pred_t_s": 39.45879000433139,
+          "avg_prompt_t_s": 653.7622658927914,
+          "category": "overall",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 8,
+          "turns": 8
+        }
+      ]
+    },
+    "ngram-mod": {
+      "server_args": [
+        "-m",
+        "models/Qwen3-8B-Q8_0.gguf",
+        "-ngl",
+        "all",
+        "-fa",
+        "on",
+        "-c",
+        "8192",
+        "-np",
+        "1",
+        "--port",
+        "9931",
+        "--jinja",
+        "--chat-template-kwargs",
+        "{\"enable_thinking\": false}",
+        "--spec-type",
+        "ngram-mod"
+      ],
+      "completed_samples": 8,
+      "failed_samples": 0,
+      "bench_seconds": 38.4,
+      "summary": [
+        {
+          "accept_rate": 0.0625,
+          "accepted": 4,
+          "avg_latency": 6.654501960503694,
+          "avg_pred_t_s": 39.392566889033475,
+          "avg_prompt_t_s": 902.2483209350305,
+          "category": "coding",
+          "draft_n": 64,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 1.0,
+          "accepted": 248,
+          "avg_latency": 3.53174709599989,
+          "avg_pred_t_s": 274.03371431652874,
+          "avg_prompt_t_s": 267.53706896227993,
+          "category": "math",
+          "draft_n": 248,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 1.8465307305013994,
+          "avg_pred_t_s": 39.5270586679597,
+          "avg_prompt_t_s": 448.2980609779373,
+          "category": "qa",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": null,
+          "accepted": 0,
+          "avg_latency": 5.508131120499456,
+          "avg_pred_t_s": 38.895099024511126,
+          "avg_prompt_t_s": 985.94968707147,
+          "category": "writing",
+          "draft_n": 0,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.8076923076923077,
+          "accepted": 252,
+          "avg_latency": 4.38522772687611,
+          "avg_pred_t_s": 97.96210972450825,
+          "avg_prompt_t_s": 651.0082844866795,
+          "category": "overall",
+          "draft_n": 312,
+          "failed": 0,
+          "requests": 8,
+          "turns": 8
+        }
+      ]
+    },
+    "dspark-n3-p0": {
+      "server_args": [
+        "-m",
+        "models/Qwen3-8B-Q8_0.gguf",
+        "-ngl",
+        "all",
+        "-fa",
+        "on",
+        "-c",
+        "8192",
+        "-np",
+        "1",
+        "--port",
+        "9931",
+        "--jinja",
+        "--chat-template-kwargs",
+        "{\"enable_thinking\": false}",
+        "-md",
+        "models/dspark-Qwen3-8B-Q8_0.gguf",
+        "-ngld",
+        "all",
+        "--spec-type",
+        "draft-dspark",
+        "--spec-draft-n-max",
+        "3",
+        "--spec-draft-p-min",
+        "0"
+      ],
+      "completed_samples": 8,
+      "failed_samples": 0,
+      "bench_seconds": 25.0,
+      "summary": [
+        {
+          "accept_rate": 0.8894230769230769,
+          "accepted": 370,
+          "avg_latency": 2.7111299594980665,
+          "avg_pred_t_s": 101.72739379742819,
+          "avg_prompt_t_s": 828.0410305100819,
+          "category": "coding",
+          "draft_n": 416,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.5332197614991482,
+          "accepted": 313,
+          "avg_latency": 3.5602766504998726,
+          "avg_pred_t_s": 72.72660917046413,
+          "avg_prompt_t_s": 259.783506782525,
+          "category": "math",
+          "draft_n": 587,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.40625,
+          "accepted": 78,
+          "avg_latency": 1.1984505820000777,
+          "avg_pred_t_s": 62.54060544711308,
+          "avg_prompt_t_s": 439.239352961295,
+          "category": "qa",
+          "draft_n": 192,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.5789473684210527,
+          "accepted": 231,
+          "avg_latency": 3.263541409996833,
+          "avg_pred_t_s": 72.29232826985547,
+          "avg_prompt_t_s": 938.7191662547216,
+          "category": "writing",
+          "draft_n": 399,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.6223337515683814,
+          "accepted": 992,
+          "avg_latency": 2.6833496504987124,
+          "avg_pred_t_s": 77.32173417121521,
+          "avg_prompt_t_s": 616.4457641271558,
+          "category": "overall",
+          "draft_n": 1594,
+          "failed": 0,
+          "requests": 8,
+          "turns": 8
+        }
+      ]
+    },
+    "dspark-n7-p0": {
+      "server_args": [
+        "-m",
+        "models/Qwen3-8B-Q8_0.gguf",
+        "-ngl",
+        "all",
+        "-fa",
+        "on",
+        "-c",
+        "8192",
+        "-np",
+        "1",
+        "--port",
+        "9931",
+        "--jinja",
+        "--chat-template-kwargs",
+        "{\"enable_thinking\": false}",
+        "-md",
+        "models/dspark-Qwen3-8B-Q8_0.gguf",
+        "-ngld",
+        "all",
+        "--spec-type",
+        "draft-dspark",
+        "--spec-draft-n-max",
+        "7",
+        "--spec-draft-p-min",
+        "0"
+      ],
+      "completed_samples": 8,
+      "failed_samples": 0,
+      "bench_seconds": 30.0,
+      "summary": [
+        {
+          "accept_rate": 0.7715827338129496,
+          "accepted": 429,
+          "avg_latency": 2.660300579002069,
+          "avg_pred_t_s": 104.02762439381084,
+          "avg_prompt_t_s": 824.7497062231575,
+          "category": "coding",
+          "draft_n": 556,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.3220494053064959,
+          "accepted": 352,
+          "avg_latency": 4.841157378501521,
+          "avg_pred_t_s": 53.27228372806616,
+          "avg_prompt_t_s": 260.4053896116293,
+          "category": "math",
+          "draft_n": 1093,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.2328042328042328,
+          "accepted": 88,
+          "avg_latency": 1.7023790475032001,
+          "avg_pred_t_s": 43.170756012115746,
+          "avg_prompt_t_s": 438.8126492340441,
+          "category": "qa",
+          "draft_n": 378,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.371994342291372,
+          "accepted": 263,
+          "avg_latency": 3.9678801970003406,
+          "avg_pred_t_s": 56.41275595882785,
+          "avg_prompt_t_s": 928.1191035772689,
+          "category": "writing",
+          "draft_n": 707,
+          "failed": 0,
+          "requests": 2,
+          "turns": 2
+        },
+        {
+          "accept_rate": 0.4140453547915143,
+          "accepted": 1132,
+          "avg_latency": 3.2929293005017826,
+          "avg_pred_t_s": 64.22085502320515,
+          "avg_prompt_t_s": 613.021712161525,
+          "category": "overall",
+          "draft_n": 2734,
+          "failed": 0,
+          "requests": 8,
+          "turns": 8
+        }
+      ]
+    }
+  },
+  "meta": {
+    "machine": "rx6700xt-arch",
+    "backend": "rocm",
+    "gpu": "AMD Radeon RX 6700 XT 12 GB",
+    "llama_cpp_version": "0.7.0-dev (build 11865, commit 9a0fde996)",
+    "os": "Linux-7.2.8-9-omarchy-x86_64-with-glibc2.44",
+    "python": "3.14.8",
+    "config": "qwen3-8b-screen-b11865",
+    "target": "models/Qwen3-8B-Q8_0.gguf",
+    "context": 8192,
+    "bench": {
+      "bench": "qualitative",
+      "categories": "coding,math,writing,qa",
+      "limit": 2,
+      "osl": 256,
+      "extra_inputs": {
+        "temperature": 0
+      }
+    },
+    "updated": "2026-10-29T11:17:29+00:00"
+  }
+}
